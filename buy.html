@@ -1,0 +1,219 @@
+<html>
+<head>
+<link rel="stylesheet" href="apple.css">
+<title>Apple(ICT) | Buy</title>
+<script src="apple.js"></script>
+
+<style>
+body{
+	color:white;
+}
+
+table{
+	width:30%;
+	margin-left:auto;
+	margin-right:auto;
+}
+label{
+	font-size:18px;
+	font-family:helvetica;
+}
+input{
+	background-color:transparent;
+	border-bottom:2px solid gray;
+	border-top:0px;
+	border-left:0px;
+	border-right:0px;
+	color:white;
+	width:100%;
+	height:auto;
+}
+input[placeholder]{
+	text-align:center;
+	font-size:12px;
+	
+}
+select{
+	text-align:center;
+	width:100%;
+
+	background-color:transparent;
+	border-color:transparent;
+	color:white;
+}
+option{
+	background-color:black;
+	color:white;
+	border-color:black;
+}
+optgroup{
+	background-color:rgb(60,60,60);
+	color:rgba(255,122,103,1);
+}
+input[type=radio]{
+	width:auto;
+	height:auto;
+}
+
+input[type=submit]{
+	width:20%;
+	height:auto;
+	border:2px solid rgba(255,122,103,1);
+	border-radius:3px;
+	background-color:rgba(255,122,103,1);
+	color:white;
+}
+textarea{
+	background-color:transparent;
+	color:white;
+}
+input[type=submit]:hover{
+	animation-name:sub;
+	animation-duration:0.3s;
+	animation-fill-mode:forwards;
+}
+td.cent{
+	text-align:center
+}
+#total{
+	font-family:helvetica;
+	font-size:18px;
+}
+@keyframes sub{
+	0%{
+	border-radius:3px;
+	padding:1px;
+	}
+	20%{
+	border-radius:4px;
+	padding:1px;
+	text-shadow:white 0px 0px 1px;
+	}
+	40%{
+	border-radius:4px;
+	padding:2px;
+	text-shadow:white 0px 0px 1px;
+	}
+	60%{
+	border-radius:5px;
+	padding:2px;
+	text-shadow:white 0px 0px 3px;
+	}
+	80%{
+	border-radius:5px;
+	padding:2px;
+	text-shadow:white 0px 0px 4px;
+	}
+	100%{
+	border-radius:6px;
+	padding:3px;
+	text-shadow:white 0px 1px 5px;
+	}
+}
+</style>
+
+</head>
+
+<body id="buy" onchange="ttl()">
+
+<ul>
+<li><a class="nav" href="apple.html">Home</a></li>
+<li><a class="nav" href="iphone15.html"><nobr>iPhone 15</nobr></a></li>
+<li><a class="nav" href="iphone15pro.html"><nobr>iPhone 15 Pro</nobr></a></li>
+<li><a class="nav" href="compare.html">Compare</a></li>
+<li><a class="nav" href="#buy">Buy</a></li>
+<li><a class="nav" href="social.html">Social</a></li>
+<li><a class="nav" href="info.html">Info</a></li>
+</ul>
+<br><br>
+<p class="p1">Buy the Future</p>
+<form action="payment.html">
+
+<table>
+
+<tr>
+<td><label for="name">Name:</label></td>
+<td><input type="text" title="Enter your name"id="name" placeholder="Your Name"required></td>
+</tr>
+
+<tr>
+<td><label for="mail">E-mail:</label></td>
+<td><input type="email" title="Enter your mail"id="mail" placeholder="Your E-mail" required></td>	
+</tr>
+
+<tr>
+<td><label for="num">Number:</label></td>
+<td><input type="number" title="Enter your number" id="num" placeholder="Your Number" required></td>	
+</tr>
+
+<tr>
+<td><label for="iphone">Select an iPhone:</label></td>
+<td class="cent">
+<select id="iphone" name="iphone" title="Select an iPhone"required>
+<option value=0 selected>--</option>
+<optgroup label="iPhone 15">
+<option value=1199>iPhone 15 Pro Max - $1,199</option>
+<option value=999>iPhone 15 Pro - $999</option>
+<option value=899>iPhone 15 Plus - $899</option>
+<option value=799>iPhone 15 - $799</option>
+</optgroup>
+<optgroup label="iPhone 14">
+<option value=1099>iPhone 14 Pro Max - $1,099</option>
+<option value=899>iPhone 14 Pro - $899</option>
+<option value=799>iPhone 14 Plus - $799</option>
+<option value=699>iPhone 14 - $699</option>
+</optgroup>
+</select>
+</td>
+</tr>
+
+<tr>
+<td><label for="acc">Accessories:</label></td>
+<td class="cent">
+<select id="acc" name="Accessories" title="Select Accessories">
+<option value=0 selected>--</option>
+<option value=19.99>20W Power Adapter-$19.99</option>
+<option value=60.99>Airpods Pro-$60.99</option>
+<option value=9.89>USB Type-C Cable-$9.89</option>
+<option value=59.99>MagSafe Charger-$59.99</option>
+</select>
+</td>
+</tr>
+<tr>
+<td><label for="add">Address:</label></td>
+<td><textarea id="add" rows="4" cols="35" title="Enter your address" placeholder="Your Address" required></textarea></td>
+</tr>
+
+<tr>
+<td><label for="pin">Pincode:</label></td>
+<td><input type="number" pattern="(?=.*\d).{,6}"title="Enter your Pincode" placeholder="XXX-XXX" required></td>
+</tr>
+
+<tr>
+<td><label for="pay">Payment Method:</label></td>
+<td class="cent"><input type="radio" name="pay" required><label style="font-size:12px;" for="pay">Net-Banking</label><input type="radio" title="Not available for online deliveries"name="pay" disabled><label style="font-size:12px;" for="pay" disabled>COD</label></td>	
+</tr>
+
+<tr>
+<td><label>Grand Total:</label></td>
+<td><p id="total">$0</p></td>
+</tr>
+
+<tr>
+<td class="cent" colspan="2"><input type="submit" formaction="payment.html" onclick="output()" value="Proceed"></td>
+</tr>
+
+<tr><td><br><br></td></tr>
+<tr>
+
+<tfoot>
+<td colspan="2" class="mid" style="font-family:helvetica;font-size:12px;">As you send us your details, our system will verify your authenticity and check delivery status at your pincode.</td>
+</tfoot>
+</table>
+</form>
+
+<br><br>
+<hr color="gray" width="100%"/>
+<p class="endcredit">Copyright &copy 2023 Apple Inc. All rights reserved.</p>
+</body>
+</html>

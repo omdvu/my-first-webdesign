@@ -1,0 +1,85 @@
+<html>
+<head>
+<link rel="stylesheet" href="apple.css">
+<script src="apple.js"></script>
+<script>
+	function bro() {
+    var resultElement = localStorage.getItem("totalValue");
+	document.getElementById("result").innerHTML = resultElement;
+   
+}
+</script>
+<style>
+body{
+	background-color:white;
+	color:gray;
+}
+div{
+	width:400px;
+	border-radius:10px;
+	padding-top:5px;
+	padding-bottom:5px;
+	margin-right:auto;
+	margin-left:auto;
+	background-color:rgba(60,60,60,0.1);
+	padding-left:10px;
+	padding-right:10px;
+}
+label{
+	font-family:helvetica;
+	font-size:12px;
+}
+
+input.idk{
+	width:100%;
+	background-color:transparent;
+	border-bottom:2px solid green;
+	border-top:0px;
+	border-right:0px;
+	border-left:0px;
+}
+input.line{
+
+	background-color:transparent;
+	border-bottom:2px solid green;
+	border-top:0px;
+	border-right:0px;
+	border-left:0px;
+}
+span#npf{
+	font-family:nothing you could do;
+	font-size:16px;
+}
+p.ppr{
+	font-family:helvetica;
+	font-size:14px;
+}
+input[type=submit]{
+	background-color:green;
+	color:white;
+	margin-right:auto;
+	margin-left:auto;
+	border:1px solid green;
+	border-radius:2px;
+	padding:4px;
+}
+</style>
+</head>
+<body onload="bro()" >
+<div>
+<form>
+<br>
+<p id="result">hi</p>
+<label for="cardholder">Name on Card:</label><br>
+<input class="idk" type="text" id="cardholder" placeholder="Cardholder Name" required><br><BR><BR>
+<label for="number">Card Details:</label><br>
+<input style="width:60%"class="line"type="text" id="number" maxlength="12" placeholder="XXXX-XXXX-XXXX-XXXX" required>
+<input style="width:18%"class="line"type="text" id="cvv" maxlength="3" placeholder="CVV" required>
+<input style="width:18%"class="line"type="text" id="mmyy" maxlength="4" placeholder="MM/YY" required><br>
+<input type="submit" value="Pay">
+</form>
+<br><BR>
+<p class="ppr">Powered by <span id="npf">noPaperForms</span></p>
+</div>
+</body>
+</html>
